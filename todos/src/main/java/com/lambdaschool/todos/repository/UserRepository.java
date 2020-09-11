@@ -12,6 +12,7 @@ import java.util.List;
  */
 public interface UserRepository extends CrudRepository<User, Long>
 {
+
     /**
      * Custom query to gather the number of current todos users have
      *

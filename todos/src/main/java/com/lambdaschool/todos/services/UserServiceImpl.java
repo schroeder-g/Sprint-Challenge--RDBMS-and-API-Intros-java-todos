@@ -1,6 +1,8 @@
 package com.lambdaschool.todos.services;
 
+import com.lambdaschool.todos.models.Todo;
 import com.lambdaschool.todos.models.User;
+import com.lambdaschool.todos.repository.TodosRepository;
 import com.lambdaschool.todos.repository.UserRepository;
 import com.lambdaschool.todos.views.UserNameCountTodos;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,8 @@ import java.util.List;
 @Service(value = "userService")
 public class UserServiceImpl implements UserService
 {
+    @Autowired
+    private TodosRepository todoRepo;
     /**
      * Connects this service to the User table.
      */
@@ -61,15 +65,27 @@ public class UserServiceImpl implements UserService
 
     @Transactional
     @Override
-    public User save(User user)
-    {
+    public User save(User user) {
         User newUser = new User();
 
+        if (user.getUserid() != 0) {
+            userrepos.findById(user.getUserid())
+                    .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
+            newUser.setUserid(user.getUserid());
+        }
+
         newUser.setUsername(user.getUsername()
-            .toLowerCase());
+                .toLowerCase());
         newUser.setPassword(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
-            .toLowerCase());
+                .toLowerCase());
+
+        newUser.getTodos()
+                .clear();
+        for (Todo t : user.getTodos())
+        {
+            newUser.getTodos().add(new Todo (newUser, t.getDescription()));
+        }
 
         return userrepos.save(newUser);
     }
@@ -77,6 +93,7 @@ public class UserServiceImpl implements UserService
     @Override
     public List<UserNameCountTodos> getCountUserTodos()
     {
-        return null;
+        List <UserNameCountTodos> list = userrepos.getCountUserTodos();
+        return list;
     }
 }
