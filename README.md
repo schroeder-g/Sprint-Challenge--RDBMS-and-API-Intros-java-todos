@@ -27,7 +27,7 @@ Your final results should look like:
         "userid": 1,
         "username": "admin",
         "primaryemail": "admin@lambdaschool.local",
-        "todos": [
+        "todo": [
             {
                 "todoid": 2,
                 "description": "Give Joe access rights",
@@ -44,7 +44,7 @@ Your final results should look like:
         "userid": 4,
         "username": "cinnamon",
         "primaryemail": "cinnamon@lambdaschool.local",
-        "todos": [
+        "todo": [
             {
                 "todoid": 5,
                 "description": "Take a nap",
@@ -66,7 +66,7 @@ Your final results should look like:
         "userid": 8,
         "username": "barnbarn",
         "primaryemail": "barnbarn@lambdaschool.local",
-        "todos": [
+        "todo": [
             {
                 "todoid": 9,
                 "description": "Rearrange my hutch",
@@ -78,13 +78,13 @@ Your final results should look like:
         "userid": 10,
         "username": "puttat",
         "primaryemail": "puttat@school.lambda",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 11,
         "username": "misskitty",
         "primaryemail": "misskitty@school.lambda",
-        "todos": []
+        "todo": []
     }
 ]
 ```
@@ -99,7 +99,7 @@ Your final results should look like:
     "userid": 4,
     "username": "cinnamon",
     "primaryemail": "cinnamon@lambdaschool.local",
-    "todos": [
+    "todo": [
         {
             "todoid": 5,
             "description": "Take a nap",
@@ -131,7 +131,7 @@ DATA
       "username": "lambdallama",
       "primaryemail": "llama@lambdaschool.local",
       "password": "ILuvM4th!",
-      "todos": [
+      "todo": [
           {
               "description": "Take over the world"
           },
@@ -159,7 +159,7 @@ http://localhost:2019/users/user/12
     "userid": 12,
     "username": "lambdallama",
     "primaryemail": "llama@lambdaschool.local",
-    "todos": [
+    "todo": [
         {
             "todoid": 13,
             "description": "Take over the world",
@@ -177,7 +177,7 @@ http://localhost:2019/users/user/12
 </details>
 
 <details>
-<summary>PATCH http://localhost:2019/todos/todo/6</summary>
+<summary>PATCH http://localhost:2019/todo/todo/6</summary>
 
 OUTPUT
 
@@ -195,7 +195,7 @@ STATUS OK
     "userid": 4,
     "username": "cinnamon",
     "primaryemail": "cinnamon@lambdaschool.local",
-    "todos": [
+    "todo": [
         {
             "todoid": 5,
             "description": "Take a nap",
@@ -237,7 +237,7 @@ STATUS OK
     "status": 500,
     "error": "Internal Server Error",
     "message": "User id 10 not found!",
-    "trace": "javax.persistence.EntityNotFoundException: User id 10 not found!\n\tat com.lambdaschool.todos.services.UserServiceImpl.lambda$findUserById$0(UserServiceImpl.java:37)\n\tat java.base/java.util.Optional.orElseThrow(Optional.java:401)\n\tat com.lambdaschool.todos.services.UserServiceImpl.findUserById(UserServiceImpl.java:37)\n\tat com.lambdaschool.todos.services.UserServiceImpl$$FastClassBySpringCGLIB$$3b13ff41.invoke(<generated>)\n\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)\n\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)\n\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)\n\tat com.lambdaschool.todos.services.UserServiceImpl$$EnhancerBySpringCGLIB$$d1e3f76f.findUserById(<generated>)\n\tat com.lambdaschool.todos.controllers.UserController.getUserById(UserController.java:61)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:564)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:634)\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:741)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\n\tat java.base/java.lang.Thread.run(Thread.java:832)\n",
+    "trace": "javax.persistence.EntityNotFoundException: User id 10 not found!\n\tat com.lambdaschool.todo.services.UserServiceImpl.lambda$findUserById$0(UserServiceImpl.java:37)\n\tat java.base/java.util.Optional.orElseThrow(Optional.java:401)\n\tat com.lambdaschool.todo.services.UserServiceImpl.findUserById(UserServiceImpl.java:37)\n\tat com.lambdaschool.todo.services.UserServiceImpl$$FastClassBySpringCGLIB$$3b13ff41.invoke(<generated>)\n\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)\n\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)\n\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)\n\tat com.lambdaschool.todo.services.UserServiceImpl$$EnhancerBySpringCGLIB$$d1e3f76f.findUserById(<generated>)\n\tat com.lambdaschool.todo.controllers.UserController.getUserById(UserController.java:61)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:564)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:634)\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:741)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\n\tat java.base/java.lang.Thread.run(Thread.java:832)\n",
     "path": "/users/user/10"
 }
 ```
@@ -247,7 +247,7 @@ STATUS OK
 ### Stretch Goals
 
 <details>
-<summary>http://localhost:2019/users/users/todos</summary>
+<summary>http://localhost:2019/users/users/todo</summary>
 
 ```JSON
 [
@@ -277,7 +277,7 @@ STATUS OK
         "userid": 1,
         "username": "admin",
         "primaryemail": "admin@lambdaschool.local",
-        "todos": [
+        "todo": [
             {
                 "todoid": 2,
                 "description": "Give Joe access rights",
@@ -294,7 +294,7 @@ STATUS OK
         "userid": 4,
         "username": "cinnamon",
         "primaryemail": "cinnamon@lambdaschool.local",
-        "todos": [
+        "todo": [
             {
                 "todoid": 5,
                 "description": "Take a nap",
@@ -316,7 +316,7 @@ STATUS OK
         "userid": 8,
         "username": "barnbarn",
         "primaryemail": "barnbarn@lambdaschool.local",
-        "todos": [
+        "todo": [
             {
                 "todoid": 9,
                 "description": "Rearrange my hutch",
@@ -328,19 +328,19 @@ STATUS OK
         "userid": 10,
         "username": "puttat",
         "primaryemail": "puttat@school.lambda",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 11,
         "username": "misskitty",
         "primaryemail": "misskitty@school.lambda",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 12,
         "username": "kyle.wunsch",
         "primaryemail": "morton.predovic@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 13,
                 "description": "Catch Onix",
@@ -362,7 +362,7 @@ STATUS OK
         "userid": 16,
         "username": "wilmer.bahringer",
         "primaryemail": "kyle.stoltenberg@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 17,
                 "description": "Catch Rapidash",
@@ -384,7 +384,7 @@ STATUS OK
         "userid": 20,
         "username": "tamala.jacobs",
         "primaryemail": "darin.sipes@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 21,
                 "description": "Catch Oddish",
@@ -406,7 +406,7 @@ STATUS OK
         "userid": 24,
         "username": "aaron.braun",
         "primaryemail": "helen.homenick@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 25,
                 "description": "Catch Fearow",
@@ -418,7 +418,7 @@ STATUS OK
         "userid": 26,
         "username": "griselda.collins",
         "primaryemail": "ramiro.bayer@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 27,
                 "description": "Catch Arbok",
@@ -440,7 +440,7 @@ STATUS OK
         "userid": 30,
         "username": "javier.schulist",
         "primaryemail": "edgar.mckenzie@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 31,
                 "description": "Catch Porygon",
@@ -457,7 +457,7 @@ STATUS OK
         "userid": 33,
         "username": "barbera.raynor",
         "primaryemail": "douglass.bartoletti@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 34,
                 "description": "Catch Bellsprout",
@@ -474,7 +474,7 @@ STATUS OK
         "userid": 36,
         "username": "rosanne.steuber",
         "primaryemail": "delinda.bergstrom@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 37,
                 "description": "Catch Sandslash",
@@ -486,7 +486,7 @@ STATUS OK
         "userid": 38,
         "username": "sam.mckenzie",
         "primaryemail": "dominique.ebert@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 39,
                 "description": "Catch Pidgeot",
@@ -508,7 +508,7 @@ STATUS OK
         "userid": 42,
         "username": "branda.howe",
         "primaryemail": "carolynn.murray@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 43,
                 "description": "Catch Kakuna",
@@ -525,7 +525,7 @@ STATUS OK
         "userid": 45,
         "username": "gertrud.crona",
         "primaryemail": "linwood.marquardt@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 46,
                 "description": "Catch Gloom",
@@ -547,7 +547,7 @@ STATUS OK
         "userid": 49,
         "username": "leo.osinski",
         "primaryemail": "neely.swift@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 50,
                 "description": "Catch Zapdos",
@@ -564,7 +564,7 @@ STATUS OK
         "userid": 52,
         "username": "shemika.brakus",
         "primaryemail": "doug.upton@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 53,
                 "description": "Catch Magneton",
@@ -581,7 +581,7 @@ STATUS OK
         "userid": 55,
         "username": "sam.bins",
         "primaryemail": "hang.mante@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 56,
                 "description": "Catch Nidoqueen",
@@ -598,7 +598,7 @@ STATUS OK
         "userid": 58,
         "username": "kathryn.mraz",
         "primaryemail": "larue.haley@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 59,
                 "description": "Catch Charmander",
@@ -615,7 +615,7 @@ STATUS OK
         "userid": 61,
         "username": "elias.toy",
         "primaryemail": "earnestine.schiller@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 62,
                 "description": "Catch Krabby",
@@ -632,13 +632,13 @@ STATUS OK
         "userid": 64,
         "username": "arlie.cassin",
         "primaryemail": "yun.aufderhar@hotmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 65,
         "username": "ashly.schimmel",
         "primaryemail": "asa.strosin@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 66,
                 "description": "Catch Rattata",
@@ -650,7 +650,7 @@ STATUS OK
         "userid": 67,
         "username": "jeannette.lubowitz",
         "primaryemail": "jarrod.koepp@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 68,
                 "description": "Catch Arbok",
@@ -667,7 +667,7 @@ STATUS OK
         "userid": 70,
         "username": "wan.haag",
         "primaryemail": "shalonda.graham@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 71,
                 "description": "Catch Cloyster",
@@ -689,7 +689,7 @@ STATUS OK
         "userid": 74,
         "username": "bernardina.beahan",
         "primaryemail": "beula.hegmann@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 75,
                 "description": "Catch Diglett",
@@ -701,7 +701,7 @@ STATUS OK
         "userid": 76,
         "username": "roman.maggio",
         "primaryemail": "isabelle.ryan@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 77,
                 "description": "Catch Hypno",
@@ -713,7 +713,7 @@ STATUS OK
         "userid": 78,
         "username": "don.parker",
         "primaryemail": "marlene.koepp@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 79,
                 "description": "Catch Farfetch'd",
@@ -735,7 +735,7 @@ STATUS OK
         "userid": 82,
         "username": "jesse.wunsch",
         "primaryemail": "wayne.murazik@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 83,
                 "description": "Catch Dratini",
@@ -757,7 +757,7 @@ STATUS OK
         "userid": 86,
         "username": "dan.kunde",
         "primaryemail": "heike.bergnaum@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 87,
                 "description": "Catch Arbok",
@@ -769,19 +769,19 @@ STATUS OK
         "userid": 88,
         "username": "casandra.legros",
         "primaryemail": "wilburn.sipes@gmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 89,
         "username": "yahaira.rice",
         "primaryemail": "hal.kertzmann@yahoo.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 90,
         "username": "gertrud.dickinson",
         "primaryemail": "katelin.reichel@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 91,
                 "description": "Catch Doduo",
@@ -803,7 +803,7 @@ STATUS OK
         "userid": 94,
         "username": "miles.graham",
         "primaryemail": "joesph.willms@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 95,
                 "description": "Catch Snorlax",
@@ -815,7 +815,7 @@ STATUS OK
         "userid": 96,
         "username": "rossana.powlowski",
         "primaryemail": "porsha.purdy@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 97,
                 "description": "Catch Gastly",
@@ -832,7 +832,7 @@ STATUS OK
         "userid": 99,
         "username": "demetrius.collins",
         "primaryemail": "kassie.waters@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 100,
                 "description": "Catch Articuno",
@@ -844,7 +844,7 @@ STATUS OK
         "userid": 101,
         "username": "royce.miller",
         "primaryemail": "steven.wisoky@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 102,
                 "description": "Catch Tentacruel",
@@ -856,7 +856,7 @@ STATUS OK
         "userid": 103,
         "username": "marlin.wisozk",
         "primaryemail": "roderick.hoppe@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 104,
                 "description": "Catch Machoke",
@@ -868,7 +868,7 @@ STATUS OK
         "userid": 105,
         "username": "chauncey.rolfson",
         "primaryemail": "anthony.swift@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 106,
                 "description": "Catch Arbok",
@@ -880,7 +880,7 @@ STATUS OK
         "userid": 107,
         "username": "kyle.steuber",
         "primaryemail": "estelle.hane@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 108,
                 "description": "Catch Clefairy",
@@ -892,13 +892,13 @@ STATUS OK
         "userid": 109,
         "username": "cecile.metz",
         "primaryemail": "euna.cole@gmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 110,
         "username": "lonny.parker",
         "primaryemail": "madie.maggio@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 111,
                 "description": "Catch Seaking",
@@ -915,7 +915,7 @@ STATUS OK
         "userid": 113,
         "username": "myles.cronin",
         "primaryemail": "annelle.treutel@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 114,
                 "description": "Catch Kadabra",
@@ -927,13 +927,13 @@ STATUS OK
         "userid": 115,
         "username": "guy.koepp",
         "primaryemail": "merle.kassulke@hotmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 116,
         "username": "malcolm.mueller",
         "primaryemail": "norbert.abernathy@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 117,
                 "description": "Catch Pinsir",
@@ -955,7 +955,7 @@ STATUS OK
         "userid": 120,
         "username": "darrell.kirlin",
         "primaryemail": "dirk.trantow@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 121,
                 "description": "Catch Spearow",
@@ -967,7 +967,7 @@ STATUS OK
         "userid": 122,
         "username": "carter.sawayn",
         "primaryemail": "loni.williamson@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 123,
                 "description": "Catch Machop",
@@ -989,7 +989,7 @@ STATUS OK
         "userid": 126,
         "username": "tana.mueller",
         "primaryemail": "laurel.denesik@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 127,
                 "description": "Catch Cloyster",
@@ -1011,7 +1011,7 @@ STATUS OK
         "userid": 130,
         "username": "lula.zulauf",
         "primaryemail": "claris.schroeder@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 131,
                 "description": "Catch Beedrill",
@@ -1028,7 +1028,7 @@ STATUS OK
         "userid": 133,
         "username": "jordan.champlin",
         "primaryemail": "phoebe.hahn@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 134,
                 "description": "Catch Goldeen",
@@ -1050,13 +1050,13 @@ STATUS OK
         "userid": 137,
         "username": "man.bernier",
         "primaryemail": "brant.howell@hotmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 138,
         "username": "phillip.spinka",
         "primaryemail": "caren.heaney@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 139,
                 "description": "Catch Weezing",
@@ -1068,13 +1068,13 @@ STATUS OK
         "userid": 140,
         "username": "trinidad.pollich",
         "primaryemail": "osvaldo.kuhlman@gmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 141,
         "username": "jessi.schimmel",
         "primaryemail": "sandra.watsica@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 142,
                 "description": "Catch Arbok",
@@ -1091,7 +1091,7 @@ STATUS OK
         "userid": 144,
         "username": "cary.rodriguez",
         "primaryemail": "carolyne.crona@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 145,
                 "description": "Catch Charmander",
@@ -1108,7 +1108,7 @@ STATUS OK
         "userid": 147,
         "username": "daren.cassin",
         "primaryemail": "tamica.pfeffer@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 148,
                 "description": "Catch Exeggcute",
@@ -1120,13 +1120,13 @@ STATUS OK
         "userid": 149,
         "username": "sparkle.fritsch",
         "primaryemail": "patricia.goldner@yahoo.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 150,
         "username": "marianela.borer",
         "primaryemail": "hilma.rogahn@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 151,
                 "description": "Catch Slowbro",
@@ -1148,13 +1148,13 @@ STATUS OK
         "userid": 154,
         "username": "tod.murazik",
         "primaryemail": "benita.pouros@yahoo.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 155,
         "username": "laci.price",
         "primaryemail": "rowena.ohara@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 156,
                 "description": "Catch Meowth",
@@ -1166,7 +1166,7 @@ STATUS OK
         "userid": 157,
         "username": "zenia.wehner",
         "primaryemail": "guy.aufderhar@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 158,
                 "description": "Catch Onix",
@@ -1188,13 +1188,13 @@ STATUS OK
         "userid": 161,
         "username": "jacques.wolff",
         "primaryemail": "carlena.stracke@hotmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 162,
         "username": "jerry.rau",
         "primaryemail": "yael.aufderhar@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 163,
                 "description": "Catch Metapod",
@@ -1216,7 +1216,7 @@ STATUS OK
         "userid": 166,
         "username": "thaddeus.wolf",
         "primaryemail": "ashlie.boyle@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 167,
                 "description": "Catch Gastly",
@@ -1233,7 +1233,7 @@ STATUS OK
         "userid": 169,
         "username": "reyes.rogahn",
         "primaryemail": "elliott.gutmann@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 170,
                 "description": "Catch Ditto",
@@ -1255,7 +1255,7 @@ STATUS OK
         "userid": 173,
         "username": "sandi.dooley",
         "primaryemail": "maire.hagenes@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 174,
                 "description": "Catch Scyther",
@@ -1267,13 +1267,13 @@ STATUS OK
         "userid": 175,
         "username": "dillon.langworth",
         "primaryemail": "genny.quitzon@gmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 176,
         "username": "melonie.crooks",
         "primaryemail": "eileen.blanda@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 177,
                 "description": "Catch Kadabra",
@@ -1290,7 +1290,7 @@ STATUS OK
         "userid": 179,
         "username": "hiroko.west",
         "primaryemail": "jimmie.runolfsdottir@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 180,
                 "description": "Catch Paras",
@@ -1302,13 +1302,13 @@ STATUS OK
         "userid": 181,
         "username": "juana.dickinson",
         "primaryemail": "tequila.rau@yahoo.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 182,
         "username": "winston.bergstrom",
         "primaryemail": "winfred.dubuque@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 183,
                 "description": "Catch Rattata",
@@ -1325,7 +1325,7 @@ STATUS OK
         "userid": 185,
         "username": "frankie.heaney",
         "primaryemail": "ollie.stiedemann@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 186,
                 "description": "Catch Snorlax",
@@ -1337,7 +1337,7 @@ STATUS OK
         "userid": 187,
         "username": "scott.pagac",
         "primaryemail": "kimberley.runolfsdottir@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 188,
                 "description": "Catch Dugtrio",
@@ -1354,13 +1354,13 @@ STATUS OK
         "userid": 190,
         "username": "angelo.hayes",
         "primaryemail": "venetta.thompson@hotmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 191,
         "username": "andrew.green",
         "primaryemail": "chong.macgyver@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 192,
                 "description": "Catch Clefable",
@@ -1372,25 +1372,25 @@ STATUS OK
         "userid": 193,
         "username": "tamekia.cummerata",
         "primaryemail": "madelyn.lemke@yahoo.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 194,
         "username": "benny.strosin",
         "primaryemail": "kandace.thompson@yahoo.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 195,
         "username": "nu.kohler",
         "primaryemail": "bettye.rath@hotmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 196,
         "username": "shirley.gislason",
         "primaryemail": "herschel.purdy@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 197,
                 "description": "Catch Pidgeot",
@@ -1407,13 +1407,13 @@ STATUS OK
         "userid": 199,
         "username": "ashanti.okon",
         "primaryemail": "burton.runolfsson@hotmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 200,
         "username": "janie.lang",
         "primaryemail": "jaime.koelpin@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 201,
                 "description": "Catch Seel",
@@ -1430,7 +1430,7 @@ STATUS OK
         "userid": 203,
         "username": "audie.larkin",
         "primaryemail": "toshiko.upton@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 204,
                 "description": "Catch Exeggutor",
@@ -1442,7 +1442,7 @@ STATUS OK
         "userid": 205,
         "username": "james.graham",
         "primaryemail": "lovie.rosenbaum@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 206,
                 "description": "Catch Pidgey",
@@ -1459,13 +1459,13 @@ STATUS OK
         "userid": 208,
         "username": "virgil.cassin",
         "primaryemail": "jeramy.bogan@hotmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 209,
         "username": "lilliana.hauck",
         "primaryemail": "windy.purdy@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 210,
                 "description": "Catch Kingler",
@@ -1482,7 +1482,7 @@ STATUS OK
         "userid": 212,
         "username": "dori.lockman",
         "primaryemail": "roland.franecki@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 213,
                 "description": "Catch Clefable",
@@ -1504,13 +1504,13 @@ STATUS OK
         "userid": 216,
         "username": "elmer.hermann",
         "primaryemail": "sybil.klein@yahoo.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 217,
         "username": "ana.ondricka",
         "primaryemail": "liliana.gutkowski@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 218,
                 "description": "Catch Vaporeon",
@@ -1522,13 +1522,13 @@ STATUS OK
         "userid": 219,
         "username": "adrianna.rice",
         "primaryemail": "charla.wintheiser@hotmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 220,
         "username": "lyndsey.kirlin",
         "primaryemail": "jama.cassin@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 221,
                 "description": "Catch Scyther",
@@ -1540,7 +1540,7 @@ STATUS OK
         "userid": 222,
         "username": "norbert.gerhold",
         "primaryemail": "krystyna.fahey@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 223,
                 "description": "Catch Golem",
@@ -1552,13 +1552,13 @@ STATUS OK
         "userid": 224,
         "username": "tanja.leffler",
         "primaryemail": "garry.ebert@yahoo.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 225,
         "username": "chae.franecki",
         "primaryemail": "marge.russel@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 226,
                 "description": "Catch Pidgeot",
@@ -1575,7 +1575,7 @@ STATUS OK
         "userid": 228,
         "username": "oliva.block",
         "primaryemail": "lou.hammes@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 229,
                 "description": "Catch Venusaur",
@@ -1592,7 +1592,7 @@ STATUS OK
         "userid": 231,
         "username": "malik.okeefe",
         "primaryemail": "emerson.walter@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 232,
                 "description": "Catch Venomoth",
@@ -1609,7 +1609,7 @@ STATUS OK
         "userid": 234,
         "username": "warner.kautzer",
         "primaryemail": "freeman.moore@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 235,
                 "description": "Catch Primeape",
@@ -1631,13 +1631,13 @@ STATUS OK
         "userid": 238,
         "username": "jarod.wunsch",
         "primaryemail": "ettie.dubuque@yahoo.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 239,
         "username": "darron.schimmel",
         "primaryemail": "rasheeda.schoen@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 240,
                 "description": "Catch Aerodactyl",
@@ -1659,7 +1659,7 @@ STATUS OK
         "userid": 243,
         "username": "debbra.rowe",
         "primaryemail": "gayla.howe@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 244,
                 "description": "Catch Charmeleon",
@@ -1676,7 +1676,7 @@ STATUS OK
         "userid": 246,
         "username": "phil.fadel",
         "primaryemail": "michal.jaskolski@yahoo.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 247,
                 "description": "Catch Arbok",
@@ -1698,13 +1698,13 @@ STATUS OK
         "userid": 250,
         "username": "joline.dibbert",
         "primaryemail": "wilbur.gottlieb@gmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 251,
         "username": "reanna.schmitt",
         "primaryemail": "alex.hodkiewicz@gmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 252,
                 "description": "Catch Venomoth",
@@ -1716,19 +1716,19 @@ STATUS OK
         "userid": 253,
         "username": "candis.skiles",
         "primaryemail": "santiago.wolff@hotmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 254,
         "username": "russell.harris",
         "primaryemail": "kiersten.dickinson@gmail.com",
-        "todos": []
+        "todo": []
     },
     {
         "userid": 255,
         "username": "sammy.kozey",
         "primaryemail": "nicholas.quigley@hotmail.com",
-        "todos": [
+        "todo": [
             {
                 "todoid": 256,
                 "description": "Catch Paras",
@@ -1769,27 +1769,27 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 You will be creating a REST api service to store and read data from an H2 database.
 
-- [ ] Please fork and clone this repository. This repository has a starting application called todos. You must start working from there. Regularly commit and push your code as appropriate.
+- [ ] Please fork and clone this repository. This repository has a starting application called todo. You must start working from there. Regularly commit and push your code as appropriate.
 
-- [ ] The initial application contains the model for the users table. Endpoints are already created and the structure for auditing fields is in place. You are adding the model for the todos table and updating the services to work with the new table.
+- [ ] The initial application contains the model for the users table. Endpoints are already created and the structure for auditing fields is in place. You are adding the model for the todo table and updating the services to work with the new table.
 
 - [ ] TODOS
   - `todoid` primary key, not null long
   - `description` string, not null
-  - `completed` boolean. Note that for all new todos, default completed to false
-  - `userid` foreign key (one user to many todos) not null
+  - `completed` boolean. Note that for all new todo, default completed to false
+  - `userid` foreign key (one user to many todo) not null
   - All tables must have the standard 4 auditing fields in place and working, being populated: created on, created by, last modified on, last modified by. The auditing usernames will all default to `llama`.
   - USERS have a one to many relationship with TODOS.
 
 - [ ] SeedData.java is a sample class that can be modified to populate the database. However, this is the seed data to use for this application. The structure can change, the data should not change. Do populate the database with this data.
 
-The following end points are already available in the initial application. You are to make sure the end points work with the newly added todos table
+The following end points are already available in the initial application. You are to make sure the end points work with the newly added todo table
 
-- [ ] GET /users/users - return all of the users and their todos.
+- [ ] GET /users/users - return all of the users and their todo.
 
-- [ ] GET /users/user/{userid} - return the user and their todos based off of user id.
+- [ ] GET /users/user/{userid} - return the user and their todo based off of user id.
 
-- [ ] POST /users/user - adds a user with their todos
+- [ ] POST /users/user - adds a user with their todo
 
   You can use the following to test this!
 
@@ -1798,7 +1798,7 @@ The following end points are already available in the initial application. You a
       "username": "lambdallama",
       "primaryemail": "llama@lambdaschool.local",
       "password": "ILuvM4th!",
-      "todos": [
+      "todo": [
           {
               "description": "Take over the world"
           },
@@ -1809,9 +1809,9 @@ The following end points are already available in the initial application. You a
   }
   ```
 
-- [ ] PATCH /todos/todo/{todoid} - mark a todo as completed.
+- [ ] PATCH /todo/todo/{todoid} - mark a todo as completed.
 
-- [ ] DELETE /users/user/{userid} - Deletes a user based off of their userid and deletes all their associated todos.
+- [ ] DELETE /users/user/{userid} - Deletes a user based off of their userid and deletes all their associated todo.
 
 ### Required best practices
 
@@ -1829,8 +1829,8 @@ In your solution, it is essential that you follow best practices and produce cle
 
 ### Task 3: Stretch Goals
 
-- [ ] GET /users/users/todos - lists the number of todos each user has that are NOT completed. Use a custom query to accomplish this!
-  - Users with 0 todos do NOT have to be included in the list
+- [ ] GET /users/users/todo - lists the number of todo each user has that are NOT completed. Use a custom query to accomplish this!
+  - Users with 0 todo do NOT have to be included in the list
   - Order the list by username!
   
-- [ ] Add in 100 more random users each with a random number (0 - 3) of random todos. The todos descriptions should be something random as well. For my example, I picked Pokemon names!
+- [ ] Add in 100 more random users each with a random number (0 - 3) of random todo. The todo descriptions should be something random as well. For my example, I picked Pokemon names!

@@ -108,7 +108,7 @@ public class UserController
             long id)
     {
         userService.delete(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.GONE);
     }
 
     /**

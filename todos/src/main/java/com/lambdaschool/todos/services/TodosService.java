@@ -1,15 +1,15 @@
 package com.lambdaschool.todos.services;
 
-import com.lambdaschool.todos.models.Todos;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import com.lambdaschool.todos.models.Todo;
 
 
 public interface TodosService
 {
-    void markComplete(long todoid);
+    void markComplete(long todoid, boolean completed);
 
-    Todos getTodoById(long todoid);
+    Todo findTodoById(long todoid);
 
-    Todos save(Todos todos);
+    Todo save(Todo todo);
+
+    Todo update(Long todoid, Todo todo);
 }

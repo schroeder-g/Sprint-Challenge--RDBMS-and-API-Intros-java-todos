@@ -1,6 +1,6 @@
 package com.lambdaschool.todos.services;
 
-import com.lambdaschool.todos.models.Todos;
+import com.lambdaschool.todos.models.Todo;
 import com.lambdaschool.todos.models.User;
 import com.lambdaschool.todos.repository.TodosRepository;
 import com.lambdaschool.todos.repository.UserRepository;
@@ -65,23 +65,26 @@ public class UserServiceImpl implements UserService
 
     @Transactional
     @Override
-    public User save(User user)
-    {
+    public User save(User user) {
         User newUser = new User();
 
+        if (user.getUserid() != 0) {
+            userrepos.findById(user.getUserid())
+                    .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
+            newUser.setUserid(user.getUserid());
+        }
+
         newUser.setUsername(user.getUsername()
-            .toLowerCase());
+                .toLowerCase());
         newUser.setPassword(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
-            .toLowerCase());
+                .toLowerCase());
 
         newUser.getTodos()
                 .clear();
-        for (Todos t: user.getTodos())
+        for (Todo t : user.getTodos())
         {
-            Todos addTodo = todoRepo.findById(t.getTodoid());
-            newUser.getTodos()
-                    .add(new Todos(addTodo.getUser(),addTodo.getDescription()));
+            newUser.getTodos().add(new Todo (newUser, t.getDescription()));
         }
 
         return userrepos.save(newUser);
